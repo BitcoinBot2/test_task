@@ -13,7 +13,7 @@ function getDomainUsersList() {
   do {
     var response = AdminDirectory.Users.list(options);
     response.users.forEach(function(user) {
-      users.push([user.name.fullName, user.primaryEmail]);
+      users.push([user.name.familyName, user.name.givenName, user.primaryEmail]);
     });
     
     // For domains with many users, the results are paged
